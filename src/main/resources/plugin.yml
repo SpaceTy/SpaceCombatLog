@@ -1,0 +1,4 @@
+name: SpaceCombatLog
+version: '${project.version}'
+main: me.spacety.spacecombatlog.SpaceCombatLog
+api-version: '1.20'
