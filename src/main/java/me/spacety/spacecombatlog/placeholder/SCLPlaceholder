@@ -1,0 +1,62 @@
+package me.spacety.spacecombatlog.util;
+
+import java.util.UUID;
+import org.bukkit.entity.Player;
+import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import me.spacety.spacecombatlog.SpaceCombatLog;
+
+public class SCLPlaceholder extends PlaceholderExpansion {
+
+    private final SpaceCombatLog plugin;
+
+    public SCLPlaceholder(SpaceCombatLog plugin) {
+        this.plugin = plugin;
+    }
+
+    @Override
+    public boolean canRegister() {
+        return true;
+    }
+
+    @Override
+    public boolean register() {
+        return super.register();
+    }
+
+    @Override
+    public String getIdentifier() {
+        return "spacecombatlog";
+    }
+
+    @Override
+    public String getAuthor() {
+        return plugin.getDescription().getAuthors().toString();
+    }
+
+    @Override
+    public String getVersion() {
+        return plugin.getDescription().getVersion();
+    }
+
+    @Override
+    public String onPlaceholderRequest(Player player, String identifier) {
+
+        if (player == null) {
+            return "";
+        }
+
+        UUID uuid = player.getUniqueId();
+
+        if (identifier.equals("in_combat_time")) {
+            long timeLeft = TimingsHandler.getTimeLeftInCombat(uuid);
+            return String.valueOf(timeLeft);
+        }
+
+        if (identifier.equals("is_in_combat")) {
+            boolean isInCombat = TimingsHandler.isInCombat(uuid);
+            return isInCombat ? "true" : "false";
+        }
+
+        return null;
+    }
+}

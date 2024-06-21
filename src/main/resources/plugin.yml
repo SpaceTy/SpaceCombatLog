@@ -2,3 +2,22 @@ name: SpaceCombatLog
 version: '${project.version}'
 main: me.spacety.spacecombatlog.SpaceCombatLog
 api-version: '1.20'
+
+commands:
+  scl:
+    description: SpaceCombatLog command
+    usage: /scl <reload>
+    permission: spacecombatlog.command.scl
+    aliases:
+      - spacecombatlog
+      - combatlog
+      - scl
+permissions:
+  spacecombatlog.command.scl:
+    description: Permission to use SpaceCombatLog command
+    default: op
+  spacecombatlog.reload:
+    description: Permission to reload SpaceCombatLog
+    default: op
+  spacecombatlog.bypass:
+    description: Permission to bypass combat mode

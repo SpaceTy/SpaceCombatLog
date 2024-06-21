@@ -1,0 +1,25 @@
+#--------------------------------------------
+#------------Messages configuration----------
+#--------------------------------------------
+messages:
+  command-blocked: "&c&lYou can't use this command in combat mode!"
+  help: "&7&l/scl <reload>"
+  config-reloaded: "&a&lConfig reloaded!"
+  no-permission: "&c&lYou don't have permission to use this command!"
+
+#--------------------------------------------
+#------------Black Listed Commands-----------
+#--------------------------------------------
+blacklisted-commands:
+  - "/spawn"
+  - "/home"
+  - "/warp spawn"
+  - "/sleep"
+
+#--------------------------------------------
+#------------General Configuration-----------
+#--------------------------------------------
+combat-permission: "spacecombatlog.command.scl"
+combat-time: 10 # in seconds
+strict-mode: false # If true, combat mode will only be activated by PvP. Otherwise, it will be activated by any damage.
+
