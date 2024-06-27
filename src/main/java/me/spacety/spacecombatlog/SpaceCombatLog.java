@@ -6,7 +6,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.spacety.spacecombatlog.commands.SCLCommandHandler;
 import me.spacety.spacecombatlog.listeners.BlackListedCommandBlocker;
 import me.spacety.spacecombatlog.listeners.PlayerTakeDamage;
-import me.spacety.spacecombatlog.placeholders.SCLPlaceholder;
 
 public final class SpaceCombatLog extends JavaPlugin {
     private static FileConfiguration config;
